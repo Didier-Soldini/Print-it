@@ -127,24 +127,23 @@ header {
 	position: absolute;
 	display: flex;
 	justify-content: space-between;
-	z-index: 1;
 	width: 92%;
-	left: opx;
+	
 }
 #banner .arrow_left {
 	position: relative;
-	width: 60px;
-	height: 100px;
+	display: flex;
 	object-fit: cover;
 	object-position: center;
+	cursor: pointer;
 	
 }
 #banner .arrow_right {
 	position: relative;
-	width: 60px;
-	height: 100px;
+	display: flex;
 	object-fit: cover;
 	object-position: center;
+	cursor: pointer;
 	
 }
 /* Gestion des points du carrousel */
