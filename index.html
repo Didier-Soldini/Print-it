@@ -19,14 +19,18 @@
 <main>
 	<div id="banner">
 		
-		<img class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it">
-		<p>Impressions tous formats <span>en boutique et en ligne</span></p>
+		<img class="banner-img" src="./assets/images/slideshow/slide1.jpg" id="slide" alt="Banner Print-it">
+		<p class="banner-text">Impressions tous formats<span>boutique et en ligne</span></p>
 		
 		<div class="arrow">
-			<button class="arrow_left"><img src="./assets/images/arrow_left.png" alt="précédent"></button>
-			<button class="arrow_right"><img src="./assets/images/arrow_right.png" alt="suivant"></button>			
+			<button class="arrow_left" onclick="ChangeSlide(-1)"><img src="./assets/images/arrow_left.png" alt="précédent"></button>
+			<button class="arrow_right" onclick="ChangeSlide(1)"><img src="./assets/images/arrow_right.png" alt="suivant"></button>			
 		</div>
 		<div class="dots">
+			<div class="dot"><i class="fa-solid fa-circle"></i></div>
+			<div class="dot"><i class="fa-solid fa-circle"></i></div>
+			<div class="dot"><i class="fa-solid fa-circle"></i></div>
+			<div class="dot"><i class="fa-solid fa-circle"></i></div>
 		</div>
 	</div>
 	<section id="about-us" class="container">
