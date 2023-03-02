@@ -1,5 +1,4 @@
 
-
 const slides = [
 	{
 		"image" : "slide1.jpg",
@@ -15,7 +14,8 @@ const slides = [
 	},
 	{
 		"image" : "slide4.png",
-		"tagLine" : "Autocollants <span>avec découpe laser sur mesure</span>"
+		"tagLine" : "Autocollants <span>avec découpe laser sur mesure</span>",
+	
 	}
 ]
 
@@ -29,10 +29,41 @@ function ChangeSlide(sens) {
         numero = 0;
     document.getElementsByClassName("banner-img")[0].src = "./assets/images/slideshow/" + slides[numero].image;
 	document.getElementsByClassName("banner-text")[0].innerHTML = slides[numero].tagLine;
-	document.getElementsByClassName("dot")[0]
-
+	
 }
 
+const bullet = document.getElementsByClassName("dot");
+const selected = bullet.length;
+const suivant = document.querySelector(".arrow_right");
+const precedent = document.querySelector(".arrow_left");
+let count =0;
+
+function dotSuivant(){
+    bullet[count].classList.remove("dot_selected");
+
+    if(count < selected - 1){
+        count++;
+    } else {
+        count = 0;
+    }
+
+    bullet[count].classList.add("dot_selected")
+    console.log(count);
+}
+suivant.addEventListener('click', dotSuivant)
 
 
+function dotPrecedent(){
+    bullet[count].classList.remove("dot_selected");
 
+    if(count > 0){
+        count--;
+    } else {
+        count = selected - 1;
+    }
+
+    bullet[count].classList.add("dot_selected")
+    // console.log(count);
+    
+}
+precedent.addEventListener('click', dotPrecedent)
