@@ -1,4 +1,7 @@
-
+const bullet = document.getElementsByClassName("dot");
+const selected = bullet.length;
+const suivant = document.querySelector(".arrow_right");
+const precedent = document.querySelector(".arrow_left");
 const slides = [
 	{
 		"image" : "slide1.jpg",
@@ -19,23 +22,6 @@ const slides = [
 	}
 ]
 
-let numero = 0;
-
-function ChangeSlide(sens) {
-    numero = numero + sens;
-    if (numero < 0)
-        numero = slides.length - 1;
-    if (numero > slides.length - 1)
-        numero = 0;
-    document.getElementsByClassName("banner-img")[0].src = "./assets/images/slideshow/" + slides[numero].image;
-	document.getElementsByClassName("banner-text")[0].innerHTML = slides[numero].tagLine;
-	
-}
-
-const bullet = document.getElementsByClassName("dot");
-const selected = bullet.length;
-const suivant = document.querySelector(".arrow_right");
-const precedent = document.querySelector(".arrow_left");
 let count =0;
 
 function dotSuivant(){
@@ -48,9 +34,12 @@ function dotSuivant(){
     }
 
     bullet[count].classList.add("dot_selected")
+    document.getElementsByClassName("banner-img")[0].src = "./assets/images/slideshow/" + slides[count].image;
+	document.getElementsByClassName("banner-text")[0].innerHTML = slides[count].tagLine;
     console.log(count);
 }
 suivant.addEventListener('click', dotSuivant)
+
 
 
 function dotPrecedent(){
@@ -63,7 +52,9 @@ function dotPrecedent(){
     }
 
     bullet[count].classList.add("dot_selected")
-    // console.log(count);
+    document.getElementsByClassName("banner-img")[0].src = "./assets/images/slideshow/" + slides[count].image;
+	document.getElementsByClassName("banner-text")[0].innerHTML = slides[count].tagLine;
+    console.log(count);
     
 }
 precedent.addEventListener('click', dotPrecedent)
